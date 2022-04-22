@@ -44,8 +44,6 @@ public class AutenticacaoViaTokenFilter extends OncePerRequestFilter {
         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(authentication);
         emailService.enviarEmail(usuario);
-
-
     }
 
     private String recuperarToken(HttpServletRequest request) {
